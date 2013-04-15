@@ -1,0 +1,6 @@
+# vim:filetype=ruby
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'yum'
+
+

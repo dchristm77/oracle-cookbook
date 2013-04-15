@@ -1,0 +1,10 @@
+{
+  "name": "sysAdmin",
+  "default_attributes": { },
+  "override_attributes": { },
+  "json_class": "Chef::Role",
+  "description": "This role performs vm updates and system package install needs",
+  "chef_type": "role",
+  "run_list": [ "recipe[yum::yum]",
+                "recipe[admin::update]" ]
+}

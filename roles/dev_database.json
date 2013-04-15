@@ -1,0 +1,20 @@
+{
+  "name": "dev_database",
+  "default_attributes": {
+      "oracle": {
+          "database": {
+              "db_name": "devdb",
+              "db_usage": "DEVELOPMENT",
+              "log_archive_enabled": "FALSE",
+              "memory_target": "356M",
+              "max_memory_target": "356M"
+          }
+      }
+  },
+  "override_attributes": { },
+  "json_class": "Chef::Role",
+  "description": "This role installs the oracle software and creates a database with dev parameters",
+  "chef_type": "role",
+  "run_list": [ "recipe[oracle::install_software]",
+                "recipe[oracle::create_database]" ]
+}
