@@ -29,7 +29,11 @@ end
 
 execute "install-oracle-database" do
     command "su oracle -l -c 'ksh -x /opt/oracle/otk/home/installOracleDatabase.ksh'"
-    not_if { "grep #{node[:oracle][:database][:db_name]} /etc/oratab" }
+    not_if do 
+        Chef::Log.debug("database name: #{node[:oracle][:database][:db_name]}")
+        cmd = Chef::ShellOut.new("grep #{node[:oracle][:database][:db_name]} /etc/oratab").run_command
+        cmd.exitstatus == 0
+    end
 end
 
 template "/etc/oratab" do
