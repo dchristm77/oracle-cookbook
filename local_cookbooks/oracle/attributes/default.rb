@@ -9,6 +9,7 @@
 
 default[:oracle][:oratoolkit][:version] = '1.0.2.1.5-1'
 default[:oracle][:owner] = 'oracle'
+default[:oracle][:version] = '11.2.0'
 default[:oracle][:home] = '/opt/oracle/eesrv/11.2.0/db1'
 
 # Database creation attributes

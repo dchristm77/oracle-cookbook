@@ -16,5 +16,6 @@
   "description": "This role installs the oracle software and creates a database with dev parameters",
   "chef_type": "role",
   "run_list": [ "recipe[oracle::install_software]",
-                "recipe[oracle::create_database]" ]
+                "recipe[oracle::create_database]",
+                "recipe[admin::prep_for_pkg]" ]
 }

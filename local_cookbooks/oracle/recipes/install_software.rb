@@ -118,3 +118,8 @@ end
 file "/var/opt/oracle/repository/linux_11gR2_database_2of2.zip" do
     action :delete
 end
+
+directory "/var/opt/oracle/repository/#{node[:oracle][:version]}" do
+    recursive true
+    action :delete
+end
